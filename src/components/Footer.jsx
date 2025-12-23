@@ -8,7 +8,6 @@ const Footer = ({ theme }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
       className="bg-slate-50 dark:bg-gray-900 pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40"
     >
       {/* footer top */}
@@ -17,7 +16,6 @@ const Footer = ({ theme }) => {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
           className="space-y-5 text-sm text-gray-700 dark:text-gray-400"
         >
           <img
@@ -49,7 +47,6 @@ const Footer = ({ theme }) => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
           className="text-gray-600 dark:text-gray-400"
         >
           <h3 className="font-semibold">Subscribe to our newsletter</h3>
@@ -78,7 +75,6 @@ const Footer = ({ theme }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
         className="pb-6 text-sm text-gray-500 flex justify-center sm:justify-between gap-4 flex-wrap"
       >
         <p>© Template by GreateStack.</p>

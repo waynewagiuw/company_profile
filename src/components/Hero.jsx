@@ -12,7 +12,6 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        viewport={{ once: true }}
         className="inline-flex items-center gap-2 border border-gray-300 p-1.5 pr-4 rounded-full"
       >
         <img src={assets.group_profile} alt="" className="w-20" />
@@ -22,7 +21,6 @@ const Hero = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        viewport={{ once: true }}
         className="relative z-10 text-4xl sm:text-5xl md:text-6xl xl:text-[84px] font-medium xl:leading-23.75 max-w-5xl"
       >
         Turning imagination into{" "}
@@ -35,7 +33,6 @@ const Hero = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
-        viewport={{ once: true }}
         className="relative z-10 text-sm sm:text-lg font-medium text-gray-500 dark:text-white/75 max-w-4/5 sm:max-w-lg pb-3"
       >
         Creating meaningful connections and turning big ideas into interactive
@@ -45,7 +42,6 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 1.4 }}
-        viewport={{ once: true }}
         className="relative"
       >
         <img

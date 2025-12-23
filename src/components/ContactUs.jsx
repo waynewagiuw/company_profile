@@ -35,7 +35,6 @@ const ContactUs = () => {
       initial="hidden"
       whileInView="visible"
       transition={{ staggerChildren: 0.2 }}
-      viewport={{ once: true }}
       id="contact-us"
       className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white"
     >
@@ -47,7 +46,6 @@ const ContactUs = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
         className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full"
         onSubmit={onSubmit}
       >
