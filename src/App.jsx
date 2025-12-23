@@ -17,13 +17,21 @@ const App = () => {
   const dotRef = useRef(null);
   const outlineRef = useRef(null);
 
-  // mouse posisi asli
+  // posisi mouse asli
   const mouse = useRef({ x: 0, y: 0 });
-  // posisi smooth untuk outline
+  // posisi smooth outline
   const position = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    let hasMouse = false;
+
     const handleMouseMove = (e) => {
+      // aktifkan cursor hanya jika mouse benar-benar dipakai
+      if (!hasMouse) {
+        document.documentElement.classList.add("has-mouse");
+        hasMouse = true;
+      }
+
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
     };
@@ -31,16 +39,13 @@ const App = () => {
     document.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
-      // smooth follow
-      position.current.x += (mouse.current.x - position.current.x) * 0.1;
-      position.current.y += (mouse.current.y - position.current.y) * 0.1;
+      position.current.x += (mouse.current.x - position.current.x) * 0.12;
+      position.current.y += (mouse.current.y - position.current.y) * 0.12;
 
       if (dotRef.current && outlineRef.current) {
-        // DOT (langsung ke mouse)
         dotRef.current.style.left = `${mouse.current.x}px`;
         dotRef.current.style.top = `${mouse.current.y}px`;
 
-        // OUTLINE (smooth follow)
         outlineRef.current.style.left = `${position.current.x}px`;
         outlineRef.current.style.top = `${position.current.y}px`;
       }
@@ -70,14 +75,14 @@ const App = () => {
       {/* Cursor Outline */}
       <div
         ref={outlineRef}
-        className="fixed top-0 left-0 w-7 h-7 rounded-full border border-primary pointer-events-none z-9999 transition-transform duration-75 ease-out"
-        style={{ transform: "translate(-50%, -50%)"}}
+        className="custom-cursor fixed top-0 left-0 w-7 h-7 rounded-full border border-primary pointer-events-none z-[9999]"
+        style={{ transform: "translate(-50%, -50%)" }}
       />
 
       {/* Cursor Dot */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-primary pointer-events-none z-9999"
+        className="custom-cursor fixed top-0 left-0 w-3 h-3 rounded-full bg-primary pointer-events-none z-[9999]"
         style={{ transform: "translate(-50%, -50%)" }}
       />
     </div>

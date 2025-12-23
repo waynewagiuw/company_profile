@@ -13,3 +13,14 @@
 @theme {
   --color-primary: #5044E5;
 }
+
+.custom-cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-mouse .custom-cursor {
+    display: block;
+  }
+}
+
