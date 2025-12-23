@@ -17,21 +17,11 @@ const App = () => {
   const dotRef = useRef(null);
   const outlineRef = useRef(null);
 
-  // posisi mouse asli
   const mouse = useRef({ x: 0, y: 0 });
-  // posisi smooth outline
   const position = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    let hasMouse = false;
-
     const handleMouseMove = (e) => {
-      // aktifkan cursor hanya jika mouse benar-benar dipakai
-      if (!hasMouse) {
-        document.documentElement.classList.add("has-mouse");
-        hasMouse = true;
-      }
-
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
     };
@@ -39,8 +29,8 @@ const App = () => {
     document.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.12;
-      position.current.y += (mouse.current.y - position.current.y) * 0.12;
+      position.current.x += (mouse.current.x - position.current.x) * 0.15;
+      position.current.y += (mouse.current.y - position.current.y) * 0.15;
 
       if (dotRef.current && outlineRef.current) {
         dotRef.current.style.left = `${mouse.current.x}px`;
