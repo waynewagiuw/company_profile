@@ -14,12 +14,10 @@
   --color-primary: #5044E5;
 }
 
-/* default: cursor custom MATI */
 .custom-cursor {
   display: none;
 }
 
-/* hanya aktif jika device punya mouse (pointer: fine) */
 @media (pointer: fine) {
   .custom-cursor {
     display: block;
